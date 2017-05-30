@@ -21,6 +21,7 @@
 	};
 
 	var hasRemind = function() {  // 今天有没有提醒
+		show = false;
 		chrome.storage.sync.get('easyTodoStorage', function(rs) {
 			var count = 1;
 			rs = rs.easyTodoStorage;
@@ -83,7 +84,6 @@
 						chrome.notifications.clear(notificationId)
 					});
 
-				show = false;
 			}
 		});
 	};
