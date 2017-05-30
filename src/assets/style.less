@@ -1,0 +1,142 @@
+@import "neat-min.css";
+
+@background-color: #EFF2F7;
+@a_info-color: #50bfff;
+@danger-color: #ff4949;
+@success-color: #13ce66;
+
+.a_info-back{background-color: #50bfff}
+.b_important-back{background-color: #13ce66}
+.c_urgency-back{background-color: #ff4949}
+
+.scrollbar{
+  &::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0);
+    border-left: 1px solid rgba(0, 0, 0, 0);
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 13px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(151,168,190,.3);
+    background-clip: padding-box;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    min-height: 40px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(151,168,190,.5);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+  }
+}
+
+
+body{
+  background-color: #EFF2F7;
+}
+
+#app {
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 798px;
+  height: 568px;
+  background-color: #EFF2F7;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.app-title{font-size: 36px;font-family: "Microsoft JhengHei Light"; color: #868686;margin-bottom: 20px}
+.el-select .el-input {
+  width: 76px;
+}
+
+.login{width: 320px;height: 568px;background-color: @background-color;padding: 15px}
+
+.top-input{
+  .el-select .el-input .el-input__icon{color: #fff}
+}
+
+.top-input.el-input{
+  .el-input__inner{transition: none}
+
+  .el-input__inner{
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .el-input-group__append, .el-input-group__prepend{
+    color: #fff;
+  }
+
+  &.a_info{
+    .el-input-group__append, .el-input-group__prepend{
+      border: 1px solid @a_info-color;
+      background-color: @a_info-color;
+    }
+    .el-input__inner{
+      border: 1px solid @a_info-color;
+    }
+  }
+
+  &.b_important{
+    .el-input-group__append, .el-input-group__prepend{
+      border: 1px solid @success-color;
+      background-color: @success-color;
+    }
+    .el-input__inner{
+      border: 1px solid @success-color;
+    }
+  }
+
+  &.c_urgency{
+    .el-input-group__append, .el-input-group__prepend{
+      border: 1px solid @danger-color;
+      background-color: @danger-color;
+    }
+    .el-input__inner{
+      border: 1px solid @danger-color;
+    }
+  }
+}
+
+.el-card__header{padding: 10px 15px}
+
+.el-card__body{padding: 15px 10px;height: 333px;overflow-y: scroll}
+
+.todo-item{
+  .el-card.box-card{border: none}
+  .el-card{
+    box-shadow: none;
+  }
+  .el-card__header{border-bottom: none;color: #fff}
+
+  &.a_info{
+    .el-card__header{background-color: @a_info-color;}
+  }
+
+  &.b_important{
+    .el-card__header{background-color: @success-color;}
+  }
+
+  &.c_urgency{
+    .el-card__header{background-color: @danger-color;}
+  }
+}
+
+
+.list-item-remind{
+  font-size: 12px;padding: 2px 4px;color: #fff;border-radius: 2px;
+}
+
+.el-dialog__body{padding: 15px 20px}
+
+.el-date-editor.el-input{width: 120px}
+
