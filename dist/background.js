@@ -1,8 +1,5 @@
 (function() {
 	var show = true;  // 是否显示通知
-	var todayRecords = [];   // 所有的今日提醒
-	var todoList = {};   // 所有的待办事项
-	var notifications = [];
 
 	var isToday = function(time) {   // 提醒是否是今天
 		time = new Date(time);
@@ -22,6 +19,9 @@
 
 	var hasRemind = function() {  // 今天有没有提醒
 		show = false;
+		var todayRecords = [];   // 所有的今日提醒
+		var todoList = {};   // 所有的待办事项
+		var notifications = [];  // 所有的通知列表
 		chrome.storage.sync.get('easyTodoStorage', function(rs) {
 			var count = 1;
 			rs = rs.easyTodoStorage;
